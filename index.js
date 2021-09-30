@@ -16,7 +16,7 @@ const createBingoBoard = function () {
 //randomiseButton creates a random number 1-76 and highlights it on the board
 
 const displayRandomBingoNum = function () {
-    let randomNum = Math.floor(Math.random() * 76)
+    let randomNum = Math.floor(Math.random() * 76 + 1)
     let arrayOfBingoNums = document.querySelectorAll('.bingoNum')
     for (let bingoNum of arrayOfBingoNums) {
         if (bingoNum.innerText == randomNum && !bingoNum.classList.contains('selected')) {
@@ -45,11 +45,34 @@ const displayRandomBingoNum = function () {
 
 //non-repeat attempt
 
+// const createUserBoard = function () {
+//     const userBoard = document.getElementById('userBoard')
+//     let arrayOfRandomNums = []
+//     while (arrayOfRandomNums.length !== 24) {
+//         let randomUserNum = Math.floor(Math.random() * 76)
+//         if (!arrayOfRandomNums.includes(randomUserNum)) {
+//             arrayOfRandomNums.push(randomUserNum)
+//         }
+//     }
+//     for (let num of arrayOfRandomNums) {
+//         let newUserNum = document.createElement('div')
+//         newUserNum.classList.add('bingoNum')
+//         newUserNum.classList.add('userNum')
+//         newUserNum.innerText = num
+//         userBoard.appendChild(newUserNum)
+//     }
+// }
+
+//attempt at making better user boards 
+
 const createUserBoard = function () {
-    const userBoard = document.getElementById('userBoard')
+    const userBoards = document.getElementById('userBoards')
+    let userBoard = document.createElement('div')
+    userBoard.classList.add('userBoard')
+    userBoards.appendChild(userBoard)
     let arrayOfRandomNums = []
     while (arrayOfRandomNums.length !== 24) {
-        let randomUserNum = Math.floor(Math.random() * 76)
+        let randomUserNum = Math.floor(Math.random() * 76 + 1)
         if (!arrayOfRandomNums.includes(randomUserNum)) {
             arrayOfRandomNums.push(randomUserNum)
         }
