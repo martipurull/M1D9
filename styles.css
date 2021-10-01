@@ -96,6 +96,10 @@ margin: 30px;
 
 }
 
+#newBoardBtn:hover {
+    font-size: large;
+}
+
 #userBoards {
     display: flex;
     flex-direction: row;
